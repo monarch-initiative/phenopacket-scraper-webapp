@@ -32,11 +32,12 @@ Setup phenopacket-scraper api by following instructions from this repository:
 
 ##Usage
 
-To run the server enter the following in the 'pps_webapp/' directory of the repository
+To run the server enter the following in the `pps_webapp/` directory of the repository
 
 	$ python manage.py runserver
 
-Run the phenopacket-scraper-api in a different port by entering this in 'phenopacketscraper/' directory of the API repository:
+Run the phenopacket-scraper-api in a different port by entering this in `phenopacketscraper/` directory of the API repository:
+
 	$ python manage.py runserver localhost:8001
 
 Now you can go to your browser and test it using:
