@@ -1,12 +1,6 @@
 from django.shortcuts import get_object_or_404, render_to_response, redirect
 from django.shortcuts import render
-from django.contrib.auth.models import User
-from django.contrib.auth.decorators import login_required, user_passes_test
-from django.template import Context
-from django.core.mail import send_mail, EmailMessage
-from django.contrib.auth import login, logout
 from django.contrib import auth
-from django.contrib.admin.views.decorators import staff_member_required
 from django.http import HttpResponse
 import requests
 
@@ -18,8 +12,8 @@ def home(request):
         url = str(request.POST['url'])
         data = []
         if choice == '1':
-            data={'content' : str(url)}
-            response = requests.get(api_url+ 'scrape', params = data)
+            get_data={'url' : str(url)}
+            response = requests.get(api_url+ 'scrape', params = get_data)
             if response.status_code == 200:
                 response_data = response.json()
                 abstract = response_data['Abstract']
@@ -28,8 +22,8 @@ def home(request):
                 data = data + [abstract, title, hpo_terms]
 
         if choice == '2':
-            data={'content' : str(url)}
-            response = requests.get(api_url+ 'annotate', params = data)
+            get_data={'url' : str(url)}
+            response = requests.get(api_url+ 'annotate', params = get_data)
             if response.status_code == 200:
                 response_data = response.json()
                 annotated_terms = response_data['Annotated HPO Terms']
@@ -37,8 +31,8 @@ def home(request):
                 data = data + [annotated_abstract, annotated_terms]
 
         if choice == '3':
-            data={'content' : str(url)}
-            response = requests.get(api_url+ 'phenopacket', params = data)
+            get_data={'url' : str(url)}
+            response = requests.get(api_url+ 'phenopacket', params = get_data)
             if response.status_code == 200:
                 response_data = response.json()
                 phenopacket = response_data['phenopacket']
@@ -48,7 +42,7 @@ def home(request):
         'data' : data,
         }
 
-        return render(request, 'home.html', context)
+        return render(request, 'main/home.html', context)
 
-    return render(request, 'home.html')
+    return render(request, 'main/home.html')
 
