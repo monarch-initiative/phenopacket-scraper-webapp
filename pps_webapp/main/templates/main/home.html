@@ -16,16 +16,16 @@
   <link href="{% static 'main/css/bootstrap.min.css' %}" rel="stylesheet">
 
   <!-- Bootstrap Material Design -->
+  
+  <!-- <link href="{% static 'main/css/bootstrap-theme.min.css' %}" rel="stylesheet"> -->
   <link href="{% static 'main/css/bootstrap-material-design.css' %}" rel="stylesheet">
   <link href="{% static 'main/css/ripples.min.css' %}" rel="stylesheet">
-  <link href="{% static 'main/css/bootstrap.min.css' %}" rel="stylesheet">
-  <link href="{% static 'main/css/bootstrap-theme.min.css' %}" rel="stylesheet">
   <!-- Dropdown.js -->
   <link href="//cdn.rawgit.com/FezVrasta/dropdown.js/master/jquery.dropdown.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <!-- Page style -->
-  <link href="index.css" rel="stylesheet">
+
 
   <!-- jQuery -->
 
@@ -38,31 +38,154 @@
 <body>
 
 
-<h1 style="align:center">Phenopacket Scraper </h1>
 
-<form method="POST" action=".">
-	{% csrf_token %}
-	Url : <input type ='text' name='url' value=''> <br>	
-			Scrape<input type="radio" name="choice" value='1' /> &nbsp;
-			Annotate<input type="radio" name="choice" value='2' /> &nbsp;
-			Phenopacket<input type="radio" name="choice" value='3' /> &nbsp;
+<div class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="javascript:void(0)">Brand</a>
+    </div>
+    <div class="navbar-collapse collapse navbar-responsive-collapse">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="javascript:void(0)">Active</a></li>
+        <li><a href="javascript:void(0)">Link</a></li>
+        <li class="dropdown">
+          <a href="http://fezvrasta.github.io/bootstrap-material-design/bootstrap-elements.html" data-target="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown
+            <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="javascript:void(0)">Action</a></li>
+            <li><a href="javascript:void(0)">Another action</a></li>
+            <li><a href="javascript:void(0)">Something else here</a></li>
+            <li class="divider"></li>
+            <li class="dropdown-header">Dropdown header</li>
+            <li><a href="javascript:void(0)">Separated link</a></li>
+            <li><a href="javascript:void(0)">One more separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-left">
+        <div class="form-group">
+          <input type="text" class="form-control col-sm-8" placeholder="Search">
+        </div>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="javascript:void(0)">Link</a></li>
+        <li class="dropdown">
+          <a href="http://fezvrasta.github.io/bootstrap-material-design/bootstrap-elements.html" data-target="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown
+            <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="javascript:void(0)">Action</a></li>
+            <li><a href="javascript:void(0)">Another action</a></li>
+            <li><a href="javascript:void(0)">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="javascript:void(0)">Separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
 
-<br>
-		<tr> 
-			<th><button type="submit" align="center">submit</button></th>
-		</tr> 
 
-<br>
-{% if data %}
-{% for k in data %}
-	{{k}}
-	<br> <br> <br>
-{% endfor %}
-{% else %}
+<div class="container" > 
+  <div class="row">
+    <div class="col-md-5">
+      <div class="well">
+      <form method="POST" action=".">
+        {% csrf_token %}
+      <div class="form-group label-floating">
+        <label for="i5i" class="control-label">Email address default size</label>
+        <input type="email" class="form-control" id="i5i">
+        <span class="help-block">Please enter a valid email address</span>
+      </div>
 
-{% endif %}
+<div class="form-group label-floating is-empty">
 
-	</form>
+            <label class="control-label" for="addon2">Floating label w/right addon</label>
+            <div class="input-group">
+              <input type="text" id="addon2" class="form-control">
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-fab btn-fab-mini">
+                  <i class="material-icons">add</i>
+                <div class="ripple-container"></div></button>
+              </span>
+            </div>
+          </div>
+
+<div class="form-group">
+  <md-radio-group layout="row">
+  <div class="radio">
+    <label>
+      <input type="radio" name="sample1" value="option1" checked="">
+      Scrape
+    </label>
+  </div>
+  <div class="radio">
+    <label>
+      <input type="radio" name="sample1" value="option1">
+      Annotate
+    </label>
+  </div>
+  <div class="radio">
+    <label>
+      <input type="radio" name="sample1" value="option1">
+      Phenopacket
+    </label>
+  </div>
+
+</div>
+
+        Scrape<input type="radio" name="choice" value='1' /> &nbsp;
+        Annotate<input type="radio" name="choice" value='2' /> &nbsp;
+        Phenopacket<input type="radio" name="choice" value='3' /> &nbsp;
+
+        <br>
+        <tr> 
+          <th><button type="submit" align="center">submit</button></th>
+        </tr> 
+
+        <br>
+        {% if data %}
+        {% for k in data %}
+        {{k}}
+        <br> <br> <br>
+        {% endfor %}
+        {% else %}
+
+        {% endif %}
+
+      </form>
+      </div>
+
+    </div> 
+    <div class="col-md-7">
+      <div class="well">
+      <h2> Output </h2>
+      <pre>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+       </pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
 
 <script src="{% static 'main/js/ripples.js' %}"></script>
