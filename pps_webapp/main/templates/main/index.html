@@ -13,21 +13,19 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <!-- Bootstrap -->
-  <link href="{% static 'main/css/bootstrap.min.css' %}" rel="stylesheet">
-
+  <!-- <link href="{% static 'main/css/bootstrap.min.css' %}" rel="stylesheet"> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <!-- Bootstrap Material Design -->
   
-  <!-- <link href="{% static 'main/css/bootstrap-theme.min.css' %}" rel="stylesheet"> -->
-  <link href="{% static 'main/css/bootstrap-material-design.css' %}" rel="stylesheet">
-  <link href="{% static 'main/css/ripples.min.css' %}" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/bootstrap.material-design/0.5.10/css/bootstrap-material-design.min.css" rel="stylesheet">
+<!--   <link href="{% static 'main/css/bootstrap-material-design.css' %}" rel="stylesheet">
+  <link href="{% static 'main/css/ripples.min.css' %}" rel="stylesheet"> -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/bootstrap.material-design/0.5.10/css/ripples.min.css">
   <!-- Dropdown.js -->
   <link href="//cdn.rawgit.com/FezVrasta/dropdown.js/master/jquery.dropdown.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  <!-- Page style -->
-
-
-  <!-- jQuery -->
+ 
 
 
 
@@ -58,10 +56,10 @@
 
       </ul>
 
-      <ul class="nav navbar-nav navbar-right">
+<!--       <ul class="nav navbar-nav navbar-right">
         <li><a href="javascript:void(0)">Logout</a></li>
         
-          </ul>
+          </ul> -->
         </li>
       </ul>
     </div>
@@ -138,9 +136,11 @@
 
 
 
+<script src="https://cdn.jsdelivr.net/bootstrap.material-design/0.5.10/js/material.min.js"></script>
+<script src="https://cdn.jsdelivr.net/bootstrap.material-design/0.5.10/js/ripples.min.js"></script>
+<!-- <script src="{% static 'main/js/ripples.js' %}"></script>
+<script src="{% static 'main/js/material.min.js' %}"></script> -->
 
-<script src="{% static 'main/js/ripples.js' %}"></script>
-<script src="{% static 'main/js/material.min.js' %}"></script>
 <script>
   $.material.init();
 </script>
